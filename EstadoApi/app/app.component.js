@@ -15,17 +15,20 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(http) {
         this.http = http;
         this.estados = new Array();
+        this.estadosFiltered = new Array();
+        this.term = '';
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.http.get('/estado/getEstados').subscribe(function (response) {
             _this.estados = (response.json()).Estados;
+            _this.estadosFiltered = _this.estados;
         });
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<div *ngFor="let estado of estados"> {{ estado.Nome }} </div>'
+            templateUrl: './app.component.html',
         }),
         __metadata("design:paramtypes", [http_1.Http])
     ], AppComponent);

@@ -7,23 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var http_1 = require("@angular/http");
-var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var estadoChange_pipe_1 = require("./estadoChange.pipe");
-var app_component_1 = require("../app/app.component");
-var AppModule = /** @class */ (function () {
-    function AppModule() {
+var SharedModule = /** @class */ (function () {
+    function SharedModule() {
     }
-    AppModule = __decorate([
+    SharedModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, common_1.CommonModule],
-            declarations: [app_component_1.AppComponent, estadoChange_pipe_1.estadoChangePipe],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [common_1.CommonModule],
+            declarations: [estadoChange_pipe_1.estadoChange],
+            exports: [estadoChange_pipe_1.estadoChange]
         })
-    ], AppModule);
-    return AppModule;
+    ], SharedModule);
+    return SharedModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.SharedModule = SharedModule;
+//# sourceMappingURL=app.sharedModule.js.map
