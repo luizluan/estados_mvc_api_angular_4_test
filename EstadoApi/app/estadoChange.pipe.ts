@@ -9,7 +9,7 @@ export class estadoChangePipe implements PipeTransform {
         if (!term) return items;
         term = term.toLowerCase();
         return items.filter(it => {
-            return it.Sigla.toLowerCase().includes(term) || it.Nome.toLowerCase().includes(term);
+            return it.Sigla.toUpperCase().includes(term.toUpperCase()) || it.Nome.toLowerCase().includes(term);
         });
     }
 

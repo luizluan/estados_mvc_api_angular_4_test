@@ -17,7 +17,7 @@ var estadoChangePipe = /** @class */ (function () {
             return items;
         term = term.toLowerCase();
         return items.filter(function (it) {
-            return it.Sigla.toLowerCase().includes(term) || it.Nome.toLowerCase().includes(term);
+            return it.Sigla.toUpperCase().includes(term.toUpperCase()) || it.Nome.toLowerCase().includes(term);
         });
     };
     estadoChangePipe = __decorate([
